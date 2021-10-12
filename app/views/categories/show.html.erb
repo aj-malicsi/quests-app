@@ -10,19 +10,37 @@
   <%= @category.details %>
 </p>
 
-<%
-=begin%>
- <%= link_to 'Edit', edit_category_path %>  
-<%
-=end%>
+<%= link_to 'Edit', edit_category_path %>  
+
 <%= link_to 'Back', categories_path %>
 
-<%
-=begin%>
- <h2>Comments</h2>
-<%= render @category.comments %>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %> 
-<%
-=end%>
+<h2>Tasks</h2>
+<% @category.tasks.each do |task| %>
+  <p>
+    <strong>Title:</strong>
+    <%= task.title %>
+  </p>
+ <p>
+    <strong>Status:</strong>
+    <% if task.status %>
+    <p>complete</p>
+    <% else %>
+    <p>incomplete</p>
+    <% end %>
+    
+  </p> 
+
+
+<% end %>
+
+<h2>Add a task:</h2>
+<%= form_with model: [ @category, @category.tasks.build ] do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -36,7 +36,7 @@ class CategoriesController < ApplicationController
 
     def destroy
         if @category.destroy
-            redirect_to categorys_path
+            redirect_to categories_path
         end
     end
 
