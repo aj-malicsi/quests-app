@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @category.title %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @category.details %>
+</p>
+
+<%
+=begin%>
+ <%= link_to 'Edit', edit_category_path %>  
+<%
+=end%>
+<%= link_to 'Back', categories_path %>
+
+<%
+=begin%>
+ <h2>Comments</h2>
+<%= render @category.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %> 
+<%
+=end%>

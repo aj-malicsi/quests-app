@@ -1,4 +1,4 @@
-# <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 <h1>categories</h1>
 
 <table>
@@ -14,13 +14,15 @@
       <tr>
         <td><%= category.title %></td>
         <td><%= category.details %></td>
+ 
+        <td><%= link_to 'Show', category_path(category) %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <%
 =begin%>
- <td><%= link_to 'Show', category_path(category) %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+ <td><%= link_to 'Destroy', category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td>  
 <%
 =end%>
+
       </tr>
     <% end %>
   </tbody>
