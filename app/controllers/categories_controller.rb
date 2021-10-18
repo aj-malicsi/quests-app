@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
         # @categories = Category.all
 
         @categories = current_user.categories
+        @tasks = Task.where("deadline >= ? and deadline < ?", Date.current, Date.current + 1)
     end
 
     def new

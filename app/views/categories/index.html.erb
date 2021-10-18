@@ -18,8 +18,23 @@
         <td><%= link_to 'Show', category_path(category) %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category_path(category), method: :delete, data: { confirm: 'Are you sure?' } %></td>  
+      </tr>
+    <% end %>
+  </tbody>
 
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Deadline</th>
+    </tr>
+  </thead>
 
+  <tbody>
+  
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.title %></td>
+        <td><%= task.deadline %></td>
       </tr>
     <% end %>
   </tbody>

@@ -21,15 +21,20 @@
     <strong>Title:</strong>
     <%= task.title %>
   </p>
- <p>
+
+  <p>
     <strong>Status:</strong>
     <% if task.status %>
     <p>complete</p>
     <% else %>
     <p>incomplete</p>
     <% end %>
-    
   </p> 
+
+  <p>
+  <strong> Deadline:</strong>
+  <%= task.deadline %>
+  </p>
 
 
 <% end %>
@@ -40,6 +45,13 @@
     <%= form.label :title %><br>
     <%= form.text_field :title %>
   </p>
+
+  <p>
+    <%= form.label :deadline %><br>
+    <%= form.datetime_field :deadline %>
+  </p>
+
+
   <p>
     <%= form.submit %>
   </p>
