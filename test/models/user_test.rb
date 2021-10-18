@@ -6,7 +6,4 @@ class UserTest < ActiveSupport::TestCase
   # end
 end
 
-test "should not save category without title" do
-  category = category.new
-  assert_not category.save
-end
+
