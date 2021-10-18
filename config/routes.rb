@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
-  resources :categories
-  # get '/categories', to "categories#index", as: 'categories'
+  devise_for :users
+  root "categories#index"
+  
+  resources :categories do
+    resources :tasks 
+  end
+
 end
