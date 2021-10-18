@@ -1,11 +1,15 @@
 class CategoriesController < ApplicationController
-    before_action :set_category, only: [:show, :edit, :update, :destroy]
+    before_action :set_category, only: [:show, :edit, :update, :destroy] 
+    before_action :authenticate_user!
     def index
-        @categories = Category.all
+        # @categories = Category.all
+
+        @categories = current_user.categories
     end
 
     def new
-        @category = Category.new
+        # @category = Category.new
+        @category = current_user.categories.build
     end
 
     def show
@@ -13,7 +17,8 @@ class CategoriesController < ApplicationController
 
 
     def create
-        @category = Category.new(category_params)
+        # @category = Category.new(category_params)
+        @category = current_user.categories.build(category_params)
 
         if @category.save
             redirect_to @category, notice: 'category was successfully created'
