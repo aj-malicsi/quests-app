@@ -36,6 +36,12 @@
   <%= task.deadline %>
   </p>
 
+  <p>
+    <%= link_to 'Delete task', [task.category, task],
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
+  </p>
+
 
 <% end %>
 
