@@ -1,13 +1,17 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <h3>Title:</h3>
+  <p>
   <%= @category.title %>
+  </p>
 </p>
 
 <p>
-  <strong>Details:</strong>
+  <h3>Details:</h3>
+  <p>
   <%= @category.details %>
+  </p>
 </p>
 
 <%= link_to 'Edit', edit_category_path %>  
@@ -40,7 +44,10 @@
     <%= link_to 'Delete task', [task.category, task],
         method: :delete,
         data: { confirm: "Are you sure?" } %>
+
+   
   </p>
+   <%= link_to 'Edit', edit_category_task_path(@category, task) %>  
 
 
 <% end %>

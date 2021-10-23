@@ -1,0 +1,23 @@
+<h1> Edit Task </h1>
+
+<%= form_with model: [ @category, @task ] do |form| %>
+  <p>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :deadline %><br>
+    <%= form.datetime_field :deadline %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
+
+
+<%= link_to 'Show', @category %> |
+<%= link_to 'Back', categories_path %>
